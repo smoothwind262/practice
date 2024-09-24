@@ -51,28 +51,44 @@ int main()
 
         printf("ÇëÑ¡Ôñ:>");
         scanf("%d", &input);
-        switch (input)
-        {
-        case 1:
-            printf("%d\n", calc(add));
-            break;
-        case 2:
-            printf("%d\n", calc(sub));
-            break;
-        case 3:
-            printf("%d\n", calc(mul));
-            break;
-        case 4:
-            printf("%d\n", calc(div));
-            break;
-        case 0:
-            printf("ÍË³ö¼ÆËãÆ÷\n");
-            break;
 
-        default:
-            printf("ÊäÈë´íÎó\n");
-            break;
+        // º¯ÊıÖ¸ÕëÊı×é
+        int (*parr[5])(int, int) = {0, add, sub, mul, div};
+        if (input >= 1 && input <= 4)
+        {
+            printf("%d\n", calc(parr[input]));
         }
+        else if (input == 0)
+        {
+            printf("ÍË³ö¼ÆËãÆ÷\n");
+        }
+        else
+        {
+            printf("ÊäÈë´íÎó\n");
+        }
+
+        // switch (input)
+        // {
+        // case 1:
+        //     printf("%d\n", calc(add));
+        //     break;
+        // case 2:
+        //     printf("%d\n", calc(sub));
+        //     break;
+        // case 3:
+        //     printf("%d\n", calc(mul));
+        //     break;
+        // case 4:
+        //     printf("%d\n", calc(div));
+        //     break;
+        // case 0:
+        //     printf("ÍË³ö¼ÆËãÆ÷\n");
+        //     break;
+
+        // default:
+        //     printf("ÊäÈë´íÎó\n");
+        //     break;
+        // }
     } while (input);
 
     return 0;
